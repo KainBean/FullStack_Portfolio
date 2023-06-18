@@ -1,74 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your Name - Full Stack Developer</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Kain Bean - Full Stack Developer</title>
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Kain Bean</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <section id="about">
+  <section id="about" class="container">
     <h2>About Me</h2>
     <p>I am a passionate Full Stack Developer currently attending a coding bootcamp. I enjoy creating web applications and solving complex problems using various technologies.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="container">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Project 1: ToDo App</h3>
-      <p>This project demonstrates my proficiency in front-end technologies such as HTML, CSS, and JavaScript. It allows users to create and manage their to-do lists.</p>
-      <a href="project1/index.html">View Project</a>
-    </div>
-    <div class="project">
-      <h3>Project 2: Blogging Platform</h3>
-      <p>Utilizing back-end technologies like Node.js, Express, and MongoDB, this project showcases my ability to build a blogging platform with user authentication and CRUD functionality.</p>
-      <a href="project2/index.html">View Project</a>
-    </div>
-    <div class="project">
-      <h3>Project 3: E-commerce Website</h3>
-      <p>As a full stack developer, I developed this e-commerce website using React, Redux, Node.js, and MongoDB. It features product listings, shopping cart functionality, and secure payment integration.</p>
-      <a href="project3/index.html">View Project</a>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Project 1: ToDo App</h3>
+          <p class="card-text">This project demonstrates my proficiency in front-end technologies such as HTML, CSS, and JavaScript. It allows users to create and manage their to-do lists.</p>
+          <a href="todoapp.html" class="btn btn-primary">View Project</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Project 2: Blogging Platform</h3>
+          <p class="card-text">Utilizing back-end technologies like Node.js, Express, and MongoDB, this project showcases my ability to build a blogging platform with user authentication and CRUD functionality.</p>
+          <a href="project2/index.html" class="btn btn-primary">View Project</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Project 3: E-commerce Website</h3>
+          <p class="card-text">As a full stack developer, I developed this e-commerce website using React, Redux, Node.js, and MongoDB. It features product listings, shopping cart functionality, and secure payment integration.</p>
+          <a href="project3/index.html" class="btn btn-primary">View Project</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="container">
     <h2>Skills</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript (ES6+)</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>Express</li>
-      <li>MongoDB</li>
-      <li>SQL</li>
-      <li>Git</li>
+    <ul class="list-group">
+      <li class="list-group-item">HTML5</li>
+      <li class="list-group-item">CSS3</li>
+      <li class="list-group-item">JavaScript (ES6+)</li>
+      <li class="list-group-item">React</li>
+      <li class="list-group-item">Node.js</li>
+      <li class="list-group-item">Express</li>
+      <li class="list-group-item">MongoDB</li>
+      <li class="list-group-item">SQL</li>
+      <li class="list-group-item">Git</li>
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="container">
     <h2>Contact</h2>
     <p>If you would like to connect or discuss any opportunities, feel free to reach out to me:</p>
-    <ul>
-      <li>Email: knbn27@gmail.com</li>
-      <li>Phone: +1 212 202 8724</li>
-      <li><a href="https://www.linkedin.com/in/aaron-bean1994/">LinkedIn</a></li>
-      <li><a href="https://github.com/KainBean">GitHub</a></li>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <i class="fa fa-envelope"></i> <a href="mailto:knbn27@gmail.com">Email: knbn27@gmail.com</a>
+      </li>
+      <li class="list-group-item">
+        <i class="fa fa-phone"></i> <a href="tel:+12122028724">Phone: +1 212 202 8724</a>
+      </li>
+      <li class="list-group-item">
+        <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/aaron-bean1994/" target="_blank">LinkedIn</a>
+      </li>
+      <li class="list-group-item">
+        <i class="fa fa-github"></i> <a href="https://github.com/KainBean" target="_blank">GitHub</a>
+      </li>
     </ul>
   </section>
+  
 
-  <footer>
+  <footer class="bg-light text-center py-3">
     <p>&copy; 2023 Kain Bean. All rights reserved.</p>
   </footer>
+
+  <!-- Add Bootstrap JS scripts here -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blogging Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome, John Doe!</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Create a New Blog Post</h2>
+    <form action="/posts" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" required></textarea>
+
+      <button type="submit">Publish</button>
+    </form>
+
+    <h2>Latest Blog Posts</h2>
+    <ul>
+      <li>
+        <h3>Blog Post Title</h3>
+        <p>Posted on: June 23, 2023</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <a href="/posts/1">Read More</a>
+      </li>
+      <!-- More list items for other blog posts -->
+    </ul>
+
+    <article>
+      <h2>Blog Post Title</h2>
+      <p>Posted on: June 23, 2023</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </article>
+    <a href="/posts">Back to All Posts</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 My Blogging Platform. All rights reserved.</p>
+  </footer>
+  <script src="blog.js"></script>
+</body>
+
+
+</html>
+

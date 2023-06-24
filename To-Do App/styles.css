@@ -1,0 +1,192 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #f4e623;
+  margin-bottom: 10px; /* Add some margin at the bottom */
+  text-size-adjust: auto ;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #09dbe6;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #0c14fb;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: #09dbe6;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  color: #0c14fb;
+}
+
+.container {
+  margin: 30px auto;
+  max-width: 600px;
+  background-color: #e8e3e3;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(60, 239, 251, 0.1);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  flex: 1;
+  color: #0c14fb;
+  margin-top: 0; /* Add some margin to the top */
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px; /* Add some margin at the bottom */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #09dbe6;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px; /* Add some margin at the bottom */
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+
+.filter-button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.priority-low {
+  background-color: #99ccff;
+}
+
+.priority-medium {
+  background-color: #ffcc99;
+}
+
+.priority-high {
+  background-color: #ff9999;
+}
+
+.stickyNote {
+  position: relative;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stickyNote::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid inherit;
+}
+
+.stickyNote textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: inherit;
+}
+
+#factsSection {
+  margin-top: 20px;
+  background-color: #2febe7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h3 {
+  color: #0c14fb;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#factsContainer {
+  margin-top: 10px;
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  margin: 10px;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+
+
+  
+  
+
+  

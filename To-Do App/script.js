@@ -1,50 +1,9 @@
-const taskInput = document.getElementById('taskInput');
-const addButton = document.getElementById('addButton');
 const taskList = document.getElementById('taskList');
-const filterButtons = document.querySelectorAll('.filter-button');
-const taskPrioritySelects = document.querySelectorAll('.task-priority-select');
+const progressBar = document.getElementById('progressBar');
 
-addButton.addEventListener('click', addTask);
 taskList.addEventListener('click', handleTaskClick);
+taskList.addEventListener('change', handleTaskChange);
 taskList.addEventListener('dblclick', handleTaskEdit);
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    const tasks = document.querySelectorAll('.task-item');
-    
-    tasks.forEach(task => {
-      if (filter === 'all') {
-        task.style.display = 'block';
-      } else if (filter === 'active') {
-        task.style.display = task.classList.contains('completed') ? 'none' : 'block';
-      } else if (filter === 'completed') {
-        task.style.display = task.classList.contains('completed') ? 'block' : 'none';
-      }
-    });
-  });
-});
-
-taskPrioritySelects.forEach(select => {
-  select.addEventListener('change', () => {
-    const taskItem = select.closest('.task-item');
-    const priority = select.value;
-    
-    // Update task priority styling or perform other actions based on priority
-    taskItem.style.backgroundColor = getPriorityColor(priority);
-  });
-});
-
-function addTask() {
-  const taskText = taskInput.value.trim();
-  if (taskText !== '') {
-    const listItem = document.createElement('li');
-    listItem.innerText = taskText;
-    taskList.appendChild(listItem);
-    taskInput.value = '';
-    taskInput.focus();
-  }
-}
 
 function handleTaskClick(event) {
   const clickedElement = event.target;
@@ -52,14 +11,43 @@ function handleTaskClick(event) {
   // Mark task as complete
   if (clickedElement.tagName === 'LI') {
     clickedElement.classList.toggle('completed');
+    updateProgress();
   }
 
   // Delete task
   if (clickedElement.classList.contains('delete-button')) {
-    const listItem = clickedElement.parentElement;
-    taskList.removeChild(listItem);
+    const taskItem = clickedElement.parentElement;
+    taskItem.remove();
+    updateProgress();
   }
 }
+
+function handleTaskChange(event) {
+  const changedElement = event.target;
+
+  // Update task priority
+  if (changedElement.classList.contains('task-priority-select')) {
+    const taskItem = changedElement.closest('.task-item');
+    const priority = changedElement.value;
+
+    // Update task priority styling or perform other actions based on priority
+    taskItem.style.backgroundColor = getPriorityColor(priority);
+  }
+}
+
+function handleAddButtonClick() {
+  const taskInput = document.getElementById('taskInput');
+  const taskText = taskInput.value;
+
+  if (taskText.trim() !== '') {
+    addTaskToPage(taskText, 'medium');
+    taskInput.value = '';
+    updateProgress();
+  }
+}
+
+const addButton = document.getElementById('addButton');
+addButton.addEventListener('click', handleAddButtonClick);
 
 function handleTaskEdit(event) {
   const taskItem = event.target.closest('.task-item');
@@ -89,6 +77,52 @@ function getPriorityColor(priority) {
     return '#ff9999';
   }
 }
+
+function updateProgress() {
+  const tasks = document.querySelectorAll('.task-item');
+  const completedTasks = document.querySelectorAll('.task-item.completed');
+  const progress = tasks.length > 0 ? (completedTasks.length / tasks.length) * 100 : 0;
+  if (progressBar) {
+    progressBar.style.width = progress + '%';
+  }
+}
+
+// Initial progress update
+updateProgress();
+
+function addTaskToPage(taskText, priority) {
+  const taskItem = document.createElement('li');
+  taskItem.classList.add('task-item');
+
+  const taskTextElement = document.createElement('span');
+  taskTextElement.classList.add('task-text');
+  taskTextElement.textContent = taskText;
+
+  const prioritySelect = document.createElement('select');
+  prioritySelect.classList.add('task-priority-select');
+  prioritySelect.innerHTML = `
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  `;
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.classList.add('delete-button');
+
+  taskItem.appendChild(taskTextElement);
+  taskItem.appendChild(prioritySelect);
+  taskItem.appendChild(deleteButton);
+
+  if (priority) {
+    prioritySelect.value = priority;
+    taskItem.style.backgroundColor = getPriorityColor(priority);
+  }
+
+  taskList.appendChild(taskItem);
+}
+
+// Example usage: addTaskToPage('Sample Task', 'medium');
 
 const stickyNotesContainer = document.getElementById('stickyNotesContainer');
 const colorClasses = ['bg-danger', 'bg-warning', 'bg-success', 'bg-info', 'bg-primary', 'bg-secondary'];
@@ -131,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 stickyNotesContainer.addEventListener('keydown', event => {
   const currentTextarea = event.target;
-  if (currentTextarea.tagName === 'TEXTAREA' && currentTextarea === stickyNotesContainer.lastElementChild.querySelector('textarea')) {
+  const isTextarea = currentTextarea && currentTextarea.tagName === 'TEXTAREA';
+
+  if (isTextarea && currentTextarea === stickyNotesContainer.lastElementChild.querySelector('textarea')) {
     handleTextareaKeydown(event);
   }
 });
@@ -175,5 +211,8 @@ function changeImage() {
 
 // Change image every 3 seconds
 setInterval(changeImage, 3000);
+
+
+
 
 

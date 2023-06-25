@@ -1,0 +1,142 @@
+/* styles3.css */
+
+/* Body */
+body {
+    background-color: #f8f8f8;
+    color: #333333;
+    font-family: Arial, sans-serif;
+  }
+  /* NavBar */
+  .navbar {
+    width: 100%;
+    background-color: #f4e623;
+    margin-bottom: 10px;
+    text-size-adjust: auto;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #09dbe6;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    color: #0c14fb;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background-color: #09dbe6;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+  }
+  
+  .navbar-toggler-icon {
+    color: #0c14fb;
+  }
+  /* Header */
+  header {
+    background-color: #09dbe6;
+    padding: 20px;
+  }
+  
+  /* Page Title */
+  h1 {
+    color: #1d4df9;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Section Headings */
+  h2 {
+    color: #09dbe6;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Goal Categories */
+  .row {
+    margin-bottom: 30px;
+  }
+  
+  .col-md-6 {
+    padding: 0 10px;
+  }
+  
+  /* Goals List */
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Progress Tracking */
+  ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Resources and Support */
+  ul {
+    list-style-type: square;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Recognition and Rewards */
+  ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Conclusion */
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #09dbe6;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Social Media Links */
+  .social-links {
+    margin-bottom: 10px;
+  }
+  
+  .social-link {
+    color: #0c14fb;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #ff9900;
+  }
+  
+  /* Additional Content */
+  footer p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #09dbe6;
+  }
+  
+  h3 {
+    color: #0c14fb;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
